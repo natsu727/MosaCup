@@ -1,26 +1,22 @@
 import type { Component } from "solid-js";
+const { OpenAIClient, AzureKeyCredential } = require("@azure/openai");
+const endpoint = process.env["AZURE_OPENAI_ENDPOINT"];
+const azureApiKey = process.env["AZURE_OPENAI_KEY"];
+const client = new OpenAIClient(endpoint, new AzureKeyCredential(azureApiKey));
 
-import logo from "./logo.svg";
-import styles from "./App.module.css";
+const deploymentId = "text-curie-001";
+
+const result = await client.getCompletions(deploymentId, prompt);
 
 const App: Component = () => {
   return (
-    <div class={styles.App}>
-      <header class={styles.header}>
-        <img src={logo} class={styles.logo} alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          class={styles.link}
-          href="https://github.com/solidjs/solid"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn
-        </a>
-      </header>
-    </div>
+    <>
+      <a>aaaaa</a>
+      <div>
+        <input></input>
+        <button>変換</button>
+      </div>
+    </>
   );
 };
 
