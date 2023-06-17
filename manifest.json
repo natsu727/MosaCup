@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Solid Chrome Extension",
+  "version": "0.0.1",
+  "description": "",
+  "action": {
+    "default_popup": "./index.html"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["src/*.css", "assets/img/*"],
+      "matches": ["*://*/*"]
+    }
+  ]
+}
